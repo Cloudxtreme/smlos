@@ -15,7 +15,7 @@ func Exit(v int) {
 func exit(v int) {
 	// live on the kernel thread and preparing to exit.
 
-	p := CurProcess()
+	p := Current()
 
 	// TODO: if this process is joinable, we need to wait until
 	// join is called and then free the process, because join

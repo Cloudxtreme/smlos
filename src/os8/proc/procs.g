@@ -58,9 +58,9 @@ func Free(p *Process) {
 	theProcs.free(p)
 }
 
-// CurProcess returns the pointer to the process that
+// Current returns the pointer to the process that
 // is bind to the current kernel thread.
-func CurProcess() *Process {
+func Current() *Process {
 	id := sync.CurThread().ID()
 	return theProcs.pmap[id]
 }
