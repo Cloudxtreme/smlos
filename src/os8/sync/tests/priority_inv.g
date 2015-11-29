@@ -86,10 +86,10 @@ func TestPriorityInversion() {
 
 func TestPriorityJoinInversion() {
 	startPriority(thHighJoinPriority, 1, false)
-	testPriorityInv.mb3.Recv()             // low priority thread started
-	testPriorityInv.mb.Recv()              // low priority thread grabbed the lock
-	startPriority(thMidPriority, 2, false) // now start a thread to starve it
-	testPriorityInv.mb2.Send(0)            // let low priority thread go on
+	testPriorityInv.mb3.Recv()             // low priority started
+	testPriorityInv.mb.Recv()              // low priority grabbed the lock
+	startPriority(thMidPriority, 2, false) // start a thread to starve it
+	testPriorityInv.mb2.Send(0)            // low priority thread go on
 
 	// mid will now be busy pulling on done, which starves low priority
 	// thread in normal conditions. However the high priority one
