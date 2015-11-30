@@ -10,20 +10,20 @@ const (
 
 	Stack0 = 511 // first stack
 
-	HeapBase   = 512  // heap starts at 2M
-	StacksBase = 1024 // base of stack mapping space
+	HeapBase   = 512    // heap, from 2M to 4M
+	StacksBase = Nentry // base of stack mapping space
 
 	// [0-Nremap) is mapped to [RemapBase, UserBase)
-	RemapBase = 1024 * 2 // base of high memory
-	UserBase  = 1024 * 4 // base of user memory
+	RemapBase = Nentry * 2 // base of high memory
+	UserBase  = Nentry * 4 // base of user memory
 
 	Nremap = UserBase - RemapBase
 
 	UserTempBase = UserBase + TempBase
 	UserStack0   = UserBase + Stack0
 
-	NpageMin = 1024      // at least 4MB
-	NpageMax = 16 * 1024 // possible max number of pages
+	NpageMin = Nentry      // at least 4MB
+	NpageMax = 16 * Nentry // possible max number of pages
 )
 
 // LowPageVaddr converts a physical address into the direct mapped virtual
