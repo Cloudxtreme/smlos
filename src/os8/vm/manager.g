@@ -17,7 +17,7 @@ func (m *manager) init(npage uint) {
 	}
 
 	pagesBase := PageStart(m.allocStatic(NpageFor(npage * sizeOfPage)))
-	pages = (*(*[NpageMax]Page)(pagesBase))[:npage]
+	pages = make([]Page, npage, pagesBase)
 
 	m.staticFrozen = true
 

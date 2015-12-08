@@ -186,7 +186,7 @@ func (p *Process) load(file string) bool {
 // Load loads in an executable file into a process's memory space.
 func (p *Process) Load(file string) bool {
 	p.tempVid = temps.AllocSlot()
-	p.temp = (*(*[vm.PageSize]byte)(vm.PageStart(p.tempVid)))[:]
+	p.temp = make([]byte, vm.PageSize, vm.PageStart(p.tempVid))
 	ret := p.load(file)
 	temps.FreeSlot(p.tempVid)
 	return ret
