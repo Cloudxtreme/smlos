@@ -14,7 +14,7 @@ var (
 	cond  sync.Cond
 )
 
-func Init() {
+func init() {
 	slots.Init(buf[:])
 	for i := uint(vm.TempBegin); i < vm.TempEnd; i++ {
 		slots.Put(i)

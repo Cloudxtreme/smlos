@@ -23,6 +23,4 @@ func SetSyscallPC(pc uint) { intr.syscallPC = pc }
 
 func SetSyscallSP(sp uint) { intr.syscallSP = sp }
 
-func Init() {
-	intr = (*control)(uint(4096))
-}
+func init() { intr = (*control)(uint(4096)) }

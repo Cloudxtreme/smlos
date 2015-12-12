@@ -10,14 +10,6 @@ func thHello() {
 }
 
 func main() {
-	intr.Init()
-	vm.Init()
-	sync.Init() // page table is now init
-	rom.Init()
-	temps.Init()
-	proc.Init()
-	syscall.Init()
-
 	_sysentry = uint(syscall.Syscall)
 
 	sync.Run(thHello)

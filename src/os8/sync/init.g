@@ -1,7 +1,6 @@
 package sync
 
-// Init initializes the scheduler and enables time interrupt.
-func Init() {
+func init() {
 	root0 = vm.MakeRoot0()
 
 	theScheduler.init()

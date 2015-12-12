@@ -8,7 +8,7 @@ func phyDirectMapRange(root *Root, from, to uint) {
 	}
 }
 
-func Init() {
+func init() {
 	npage := nMemPage()
 	if npage < NpageMin {
 		panic() // memory too small

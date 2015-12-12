@@ -35,8 +35,7 @@ func (r *syncROM) read(
 	return n, err
 }
 
-// Init initializes the ROM.
-func Init() {
+func init() {
 	theROM.init()
 	sync.IntrHandlers[intr.ROM] = romHandler
 	intr.EnableLine(intr.ROM)

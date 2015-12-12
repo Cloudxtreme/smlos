@@ -1,6 +1,6 @@
 package syscall
 
-func Init() {
+func init() {
 	syscalls[Putc] = _putc
 	syscalls[Exit] = _exit
 	syscalls[Exec] = _exec

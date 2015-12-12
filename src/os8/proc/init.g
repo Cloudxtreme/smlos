@@ -1,6 +1,6 @@
 package proc
 
-func Init() {
+func init() {
 	theProcs.init()
 
 	sync.UserIntrHandler = ihandler
