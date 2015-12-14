@@ -37,7 +37,7 @@ func ihandler(frame *intr.Frame) *intr.Frame {
 	// kernel mode halts and panics are expected, just do it.
 	if frame.Ring == 0 {
 		if i == intr.Halt {
-			halt() // shutting down here
+			builtin.Halt() // shutting down here
 		} else if i == intr.Panic {
 			panic()
 		}

@@ -1,5 +1,10 @@
 package proc
 
+func ustart(pc, sp uint) {
+	f := (func(uint, uint))(uint(os8.Ustart))
+	f(pc, sp)
+}
+
 // procStart is the wrapper function that starts the process.
 func procStart(arg uint) {
 	cur := sync.CurThread()

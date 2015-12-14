@@ -48,7 +48,7 @@ func MakeRoot0() *Root {
 		root0.phyMap(RemapBase+i, i, 0)
 	}
 
-	vtable(uint(root0))
+	vtable(root0)
 
 	return (*Root)(LowPageVaddr(uint(root0)))
 }

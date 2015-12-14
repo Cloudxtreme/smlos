@@ -33,6 +33,11 @@ const (
 	yield       = 14
 )
 
+func syscall(a, b, c uint) (x, y, z uint) {
+	f := (func(a, b, c uint) (x, y, z uint))(uint(builtin.Syscall))
+	f(a, b, c)
+}
+
 // Putc puts a char to the console.
 func Putc(v char) int {
 	ret, _, _ := syscall(putc, uint(v), 0)

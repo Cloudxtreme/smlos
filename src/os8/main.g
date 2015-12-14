@@ -10,7 +10,7 @@ func thHello() {
 }
 
 func main() {
-	_sysentry = uint(syscall.Syscall)
+	*(*uint)(os8.SysEntry) = uint(syscall.Syscall)
 
 	sync.Run(thHello)
 }

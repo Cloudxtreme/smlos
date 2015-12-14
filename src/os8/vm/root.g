@@ -1,5 +1,9 @@
 package vm
 
+func vtable(root *Root) {
+	(func(*Root))(uint(builtin.Vtable))(root)
+}
+
 type Root struct {
 	entries [Nentry]uint
 }
@@ -92,5 +96,5 @@ func (r *Root) Walk(vid uint) uint {
 
 // Use applies the page table.
 func (r *Root) Use() {
-	vtable(LowPagePaddr(uint(r)))
+	vtable((*Root)(LowPagePaddr(uint(r))))
 }
