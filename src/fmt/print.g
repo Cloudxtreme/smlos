@@ -37,7 +37,7 @@ func PrintUint(i uint) {
 
 	for n > 0 {
 		n--
-		printChar(buf[n])
+		PrintChar(buf[n])
 	}
 }
 
