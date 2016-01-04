@@ -4,8 +4,8 @@ package proc
 // and then exit with the process return value.
 func Exit(v int) {
 	cur := sync.CurThread()
-	cur.UseRoot0()
-	sync.UseRoot0()
+	cur.UseRoot0()  // unhook the page table
+	sync.UseRoot0() // set to page table 0
 	exit(v)
 
 	panic() // unreachable

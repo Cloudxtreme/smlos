@@ -67,23 +67,28 @@ func Exec(cmd string) (pid int, err int) {
 	return ExecWithConfig(cmd, nil)
 }
 
+// Join joins a child process.
 func Join(pid int) (int, int) {
-	panic() // TODO:
-	return 0, 0
+	ret, err, _ := syscall(join, uint(pid), 0)
+	return int(ret), int(err)
 }
 
+// Read reads a file into a buffer. Returns the number of bytes read, and an
+// error code.
 func Read(fd int, buf []char) (int, int) {
-	panic()
-	return 0, 0
+	n, err, _ := syscall(read, uint(fd), uint(&buf))
+	return int(n), int(err)
 }
 
-// Write writes a char buffer into a file.
+// Write writes a char buffer into a file. Returns the number of bytes written,
+// and an error code.
 func Write(fd int, buf []char) (int, int) {
 	n, err, _ := syscall(write, uint(fd), uint(&buf))
 	return int(n), int(err)
 }
 
+// Close closes a file, returns an error code
 func Close(fd int) int {
-	panic()
-	return 0
+	err, _, _ := syscall(close, uint(fd), 0)
+	return int(err)
 }
