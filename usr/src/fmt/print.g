@@ -39,11 +39,12 @@ func PrintUint(i uint) {
 		i /= 10
 		n++
 	}
-	var printBuf [10]char
-	for i := 0; i < n; i++ {
-		printBuf[i] = buf[n-1-i]
+	for i := 0; i < n/2; i++ {
+		c := buf[i]
+		buf[i] = buf[n-1-i]
+		buf[n-1-i] = c
 	}
-	PrintStr(printBuf[:n])
+	PrintStr(buf[:n])
 }
 
 // Println prints an endline.
