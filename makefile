@@ -7,6 +7,9 @@ all:
 	gofmt -l -w `find usr/src -name "*.g"`
 	gotags `find src -name "*.g"` > tags
 	e8vm -n=100000000 -rom=./rom -seed=2 -s bin/os8.e8 # run in simulator
+
+static:
+	e8 -test=false -golike -initpc=0x8000 -static
 	
 tall:
 	e8 -test=false -golike -initpc=0x8000 # compile
