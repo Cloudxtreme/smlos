@@ -4,9 +4,8 @@ import (
 	"asm/builtin"
 	"asm/os8"
 
+	"fmt"
+	"intr"
 	"pool"
-
-	"os8/fmt"
-	"os8/intr"
-	"os8/vm"
+	"vm"
 )

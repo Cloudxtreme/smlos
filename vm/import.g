@@ -2,6 +2,7 @@ package vm
 
 import (
 	"asm/builtin"
-	"os8/intr"
+
+	"intr"
 	"pool"
 )

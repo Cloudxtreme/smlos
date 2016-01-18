@@ -1,10 +1,13 @@
-package os8
+package proc
 
 import (
 	"asm/os8"
 
+	"exec"
 	"fmt"
+	"intr"
+	"rom"
 	"sync"
-	"syscall"
+	"temps"
 	"vm"
 )

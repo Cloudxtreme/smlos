@@ -3,8 +3,8 @@ package temps
 import (
 	"pool"
 
-	"os8/sync"
-	"os8/vm"
+	"sync"
+	"vm"
 )
 
 var (
