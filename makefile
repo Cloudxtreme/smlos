@@ -2,11 +2,10 @@
 
 all:
 	e8 -test=false -golike -initpc=0x8000 # compile
-	make -C usr
-	gofmt -l -w `find src -name "*.g"`
-	gofmt -l -w `find usr/src -name "*.g"`
-	gotags `find src -name "*.g"` > tags
-	e8vm -n=100000000 -rom=./rom -seed=2 -s bin/os8.e8 # run in simulator
+	make -C _usr
+	gofmt -l -w `find . -name "*.g"`
+	gotags `find . -name "*.g"` > tags
+	e8vm -n=100000000 -rom=./rom -seed=2 -s _/bin/os8.e8 # run in simulator
 
 static:
 	e8 -test=false -golike -initpc=0x8000 -static
@@ -29,7 +28,7 @@ clean:
 	rm -rf bin log
 
 tags:
-	gotags `find src -name "*.g"` > tags
+	gotags `find . -name "*.g"` > tags
 
 lc:
 	wc -l `find src -name "*.g"`
