@@ -35,7 +35,7 @@ const (
 
 func syscall(a, b, c uint) (x, y, z uint) {
 	f := (func(a, b, c uint) (x, y, z uint))(uint(builtin.Syscall))
-	f(a, b, c)
+	return f(a, b, c)
 }
 
 // Putc puts a char to the console.

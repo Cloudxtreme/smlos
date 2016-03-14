@@ -48,6 +48,7 @@ func Syscall(arg1, arg2, arg3 uint) (r1, r2, r3 uint) {
 	}
 
 	syscallPanic()
+	return 0, 0, 0
 }
 
 // syscallPanic kills the process with error code -1.

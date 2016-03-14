@@ -59,4 +59,5 @@ func ihandler(frame *intr.Frame) *intr.Frame {
 	fmt.PrintStr("unhandled kernel interrupt/exception:\n")
 	printFrame(frame)
 	panic()
+	return nil
 }
