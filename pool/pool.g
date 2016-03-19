@@ -12,6 +12,7 @@ func (p *Pool) Init(dat []uint) {
 	p.dat = dat
 	n := len(dat)
 	p.n = 0
+	_ := n // TODO:
 }
 
 // Empty checks if the pool is empty.
