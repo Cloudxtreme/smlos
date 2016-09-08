@@ -106,6 +106,13 @@ func Panic {
 // Sleep suspends the machine
 func Sleep {
     sleep
+    mov pc ret
+}
+
+// IOCall
+func IOCall {
+    iocall
+    mov pc ret
 }
 
 // Assert panics if the condition is not met
