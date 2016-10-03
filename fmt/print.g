@@ -10,7 +10,7 @@ func PrintStr(s string) {
 	}
 }
 
-// PrintInt prints out an integer
+// PrintInt prints out an integer.
 func PrintInt(i int) {
 	if i < 0 {
 		PrintChar('-')
