@@ -1,3 +1,5 @@
+[![BuildStatus](https://travis-ci.org/shanhuio/smlos.png?branch=master)](https://travis-ci.org/shanhuio/smlos)
+
 # OS8
 
 (work in progress)
