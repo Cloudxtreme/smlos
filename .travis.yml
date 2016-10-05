@@ -2,10 +2,10 @@ sudo: false
 language: go
 
 go:
-    - 1.5
+    - 1.7
 
 install:
-    - go get e8vm.io/e8vm/cmd/e8
+    - go get shanhu.io/smlvm/cmd/e8
 
 script:
     - e8 -golike -initpc=0x8000
