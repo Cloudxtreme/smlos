@@ -2,7 +2,6 @@ package hello
 
 import (
 	"fmt"
-	"os"
 )
 
 func main() {

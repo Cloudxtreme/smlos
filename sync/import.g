@@ -6,6 +6,5 @@ import (
 
 	"fmt"
 	"intr"
-	"pool"
 	"vm"
 )
