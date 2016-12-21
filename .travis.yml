@@ -8,4 +8,4 @@ install:
     - go get shanhu.io/smlvm/cmd/e8
 
 script:
-    - e8 -golike -initpc=0x8000
+    - smlvm -golike -std=/ -initpc=0x8000
