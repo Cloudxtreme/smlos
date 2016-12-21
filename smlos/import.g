@@ -1,7 +1,7 @@
-package os8
+package smlos
 
 import (
-	"asm/os8"
+	"asm/smlos"
 
 	"fmt"
 	"sync"

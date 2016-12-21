@@ -1,5 +1,5 @@
 package os
 
 import (
-	"asm/builtin"
+	"asm/sys"
 )

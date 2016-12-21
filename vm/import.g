@@ -1,6 +1,7 @@
 package vm
 
 import (
-	"asm/builtin"
+	"asm/smlos"
+
 	"intr"
 )

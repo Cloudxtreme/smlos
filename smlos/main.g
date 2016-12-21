@@ -1,4 +1,4 @@
-package os8
+package smlos
 
 func thHello() {
 	_, err := syscall.Execute("hello.e8", nil)
@@ -8,7 +8,7 @@ func thHello() {
 }
 
 func main() {
-	*(*uint)(os8.SysEntry) = uint(syscall.Syscall)
+	*(*uint)(smlos.SysEntry) = uint(syscall.Syscall)
 
 	sync.Run(thHello)
 }

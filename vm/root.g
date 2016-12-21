@@ -1,7 +1,7 @@
 package vm
 
 func vtable(root *Root) {
-	(func(*Root))(uint(builtin.Vtable))(root)
+	(func(*Root))(uint(smlos.Vtable))(root)
 }
 
 type Root struct {

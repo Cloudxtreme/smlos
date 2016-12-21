@@ -79,3 +79,19 @@ func Ienter {
     iret
 }
 
+// Vtable sets the virtual machine table.
+func Vtable {
+	vtable r1
+	mov pc ret
+}
+
+// Syscall performs a system call.
+func Syscall {
+	syscall
+	mov pc ret
+}
+
+// Halt halts the system with halt exception
+func Halt {
+	halt
+}

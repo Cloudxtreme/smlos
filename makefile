@@ -1,25 +1,26 @@
-.PHONY: all fmt clean e8fmt tags test
+.PHONY: all fmt clean gfmt tags test
 
 all:
-	e8 -test=false -golike -initpc=0x8000 # compile
+	@rm -rf _
+	sml -test=false -std=/ -golike -initpc=0x8000 # compile
 	make -C _toys
 	gofmt -l -w `find . -name "*.g"`
 	gotags `find . -name "*.g"` > tags
-	e8vm -n=100000000 -rom=_rom -seed=2 -s _/bin/os8.e8
+	smlvm -n=100000000 -rom=_rom -seed=2 -s _/bin/smlos.e8
 
 static:
-	e8 -test=false -golike -initpc=0x8000 -static
+	sml -test=false -golike -initpc=0x8000 -static
 	
 tall:
-	e8 -test=false -golike -initpc=0x8000 # compile
-	e8vm -n=100000000 -rom=_rom -seed=0 bin/os8/sync/tests.e8
+	sml -test=false -std=/ -golike -initpc=0x8000 # compile
+	sml -n=100000000 -rom=_rom -seed=0 bin/smlos/sync/tests.e8
 
 test:
-	e8 -golike -initpc=0x8000
+	sml -golike -std=/ -initpc=0x8000
 	gofmt -l -w `find . -name "*.g"`
 
-e8fmt:
-	e8fmt `find . -name "*.g"`
+gfmt:
+	gfmt `find . -name "*.g"`
 
 fmt:
 	gofmt -l -w `find . -name "*.g"`

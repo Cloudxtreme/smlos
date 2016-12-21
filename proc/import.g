@@ -1,7 +1,7 @@
 package proc
 
 import (
-	"asm/os8"
+	"asm/smlos"
 
 	"exec"
 	"fmt"

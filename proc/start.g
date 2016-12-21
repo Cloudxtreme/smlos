@@ -1,7 +1,7 @@
 package proc
 
 func ustart(pc, sp uint) {
-	f := (func(uint, uint))(uint(os8.Ustart))
+	f := (func(uint, uint))(uint(smlos.Ustart))
 	f(pc, sp)
 }
 
