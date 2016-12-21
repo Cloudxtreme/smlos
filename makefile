@@ -9,7 +9,7 @@ all:
 	smlvm -n=100000000 -rom=_rom -seed=2 -s _/bin/smlos.e8
 
 static:
-	sml -test=false -golike -initpc=0x8000 -static
+	sml -test=false -std=/ -golike -initpc=0x8000 -static
 	
 tall:
 	sml -test=false -std=/ -golike -initpc=0x8000 # compile
