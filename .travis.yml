@@ -5,7 +5,7 @@ go:
     - 1.7
 
 install:
-    - go get shanhu.io/smlvm/cmd/smlvm
+    - go get shanhu.io/smlvm/cmd/sml
 
 script:
-    - smlvm -golike -std=/ -initpc=0x8000
+    - sml -golike -std=/ -initpc=0x8000
