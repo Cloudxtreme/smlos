@@ -6,17 +6,13 @@ all:
 	make -C _toys
 	gofmt -l -w `find . -name "*.g"`
 	gotags `find . -name "*.g"` > tags
-	smlvm -n=100000000 -rom=_rom -seed=2 -s _/bin/smlos.e8
+	smlvm -n=100000000 -rom=_rom -seed=2 -s -initsp=0x20000 _/bin/smlos.e8
 
 static:
 	sml -test=false -std=/ -golike -initpc=0x8000 -static
 	
-tall:
-	sml -test=false -std=/ -golike -initpc=0x8000 # compile
-	sml -n=100000000 -rom=_rom -seed=0 bin/smlos/sync/tests.e8
-
 test:
-	sml -golike -std=/ -initpc=0x8000
+	sml -golike -std=/ -initpc=0x8000 -initsp=0x20000
 	gofmt -l -w `find . -name "*.g"`
 
 gfmt:
