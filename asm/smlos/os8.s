@@ -13,7 +13,7 @@ func SysEnter {
     // sp is saved at sp[-4]
     addi sp sp -8
     sw ret sp 0 // save user ret
-    lui r4 SysEntry
+    addui r4 r0 SysEntry
     ori r4 r4 SysEntry
     lw r4 r4 0
     xor r0 r0 r0 // clear r0
@@ -60,7 +60,7 @@ func Ienter {
     mov r1 sp // first arg, the interrupt frame
     
     // load the function pointer
-    lui r2 Ientry
+    addui r2 r0 Ientry
     ori r2 r2 Ientry
     lw r2 r2 0
     addi ret pc 4 // the return position, since not using jal
