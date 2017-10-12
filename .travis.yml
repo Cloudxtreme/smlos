@@ -8,4 +8,4 @@ install:
     - go get shanhu.io/smlvm/cmd/smlg
 
 script:
-    - sml -golike -std=/ -initpc=0x8000 -initsp=0x20000
+    - smlg -golike -std=/ -initpc=0x8000 -initsp=0x20000
