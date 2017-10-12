@@ -2,17 +2,17 @@
 
 all:
 	@rm -rf _
-	sml -test=false -std=/ -golike -initpc=0x8000 # compile
+	smlg -test=false -std=/ -golike -initpc=0x8000 # compile
 	make -C _toys
 	gofmt -l -w `find . -name "*.g"`
 	gotags `find . -name "*.g"` > tags
 	smlvm -n=100000000 -rom=_rom -seed=2 -s -initsp=0x20000 _/bin/smlos.bin
 
 static:
-	sml -test=false -std=/ -golike -initpc=0x8000 -static
+	smlg -test=false -std=/ -golike -initpc=0x8000 -static
 	
 test:
-	sml -golike -std=/ -initpc=0x8000 -initsp=0x20000
+	smlg -golike -std=/ -initpc=0x8000 -initsp=0x20000
 	gofmt -l -w `find . -name "*.g"`
 
 gfmt:
